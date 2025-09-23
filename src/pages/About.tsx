@@ -6,57 +6,57 @@ const About = () => {
     <>
       <div className="min-h-screen pt-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-dark-slate to-dark-gray text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+        <section className="bg-gradient-to-br from-dark-slate to-dark-gray text-white py-12 sm:py-16 md:py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center min-h-[200px] sm:min-h-[300px] md:min-h-[400px]">
+            <div className="w-full max-w-3xl">
+              <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
                 About CarInspect Pro
               </h1>
-              <p className="text-xl text-muted-gray">
+              <p className="text-base sm:text-xl text-muted-gray">
                 Your trusted partner in vehicle inspection services, providing peace of mind for every car purchase.
               </p>
             </div>
           </div>
-            </section>
+        </section>
 
         {/* Company Story */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-primary-text mb-6">Our Story</h2>
-                <p className="text-lg text-secondary-gray leading-relaxed mb-6">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-4 sm:mb-6">Our Story</h2>
+                <p className="text-base sm:text-lg text-secondary-gray leading-relaxed mb-4 sm:mb-6">
                   CarInspect Pro was founded with a simple mission: to protect car buyers from costly surprises and hidden defects. We've seen too many people purchase vehicles only to discover expensive problems shortly after.
                 </p>
-                <p className="text-lg text-secondary-gray leading-relaxed mb-6">
+                <p className="text-base sm:text-lg text-secondary-gray leading-relaxed mb-4 sm:mb-6">
                   Our team of certified automotive professionals brings decades of combined experience in vehicle inspection, diagnostics, and automotive engineering. We understand what to look for and how to communicate our findings in clear, actionable terms.
                 </p>
-                <p className="text-lg text-secondary-gray leading-relaxed">
+                <p className="text-base sm:text-lg text-secondary-gray leading-relaxed">
                   Today, we're proud to be South Africa's most trusted independent car inspection service, having helped thousands of customers make confident purchasing decisions.
                 </p>
               </div>
-              <div className="bg-light-gray p-8 rounded-lg border border-light-border">
-                <h3 className="text-2xl font-bold text-primary-text mb-6">Our Values</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
+              <div className="bg-light-gray p-4 sm:p-8 rounded-lg border border-light-border mt-6 lg:mt-0">
+                <h3 className="text-lg sm:text-2xl font-bold text-primary-text mb-4 sm:mb-6">Our Values</h3>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="flex items-start space-x-2 sm:space-x-3">
                     <Shield className="h-6 w-6 text-brand-green flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-semibold text-primary-text">Integrity</h4>
-                      <p className="text-secondary-gray">We provide honest, unbiased assessments</p>
+                      <h4 className="font-semibold text-primary-text text-sm sm:text-base">Integrity</h4>
+                      <p className="text-secondary-gray text-xs sm:text-sm">We provide honest, unbiased assessments</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-2 sm:space-x-3">
                     <Award className="h-6 w-6 text-brand-green flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-semibold text-primary-text">Excellence</h4>
-                      <p className="text-secondary-gray">We maintain the highest professional standards</p>
+                      <h4 className="font-semibold text-primary-text text-sm sm:text-base">Excellence</h4>
+                      <p className="text-secondary-gray text-xs sm:text-sm">We maintain the highest professional standards</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-2 sm:space-x-3">
                     <Users className="h-6 w-6 text-brand-green flex-shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="font-semibold text-primary-text">Customer Focus</h4>
-                      <p className="text-secondary-gray">Your peace of mind is our priority</p>
+                      <h4 className="font-semibold text-primary-text text-sm sm:text-base">Customer Focus</h4>
+                      <p className="text-secondary-gray text-xs sm:text-sm">Your peace of mind is our priority</p>
                     </div>
                   </div>
                 </div>

@@ -70,14 +70,14 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen pt-16 bg-gray-50 flex items-center justify-center">
-        <div className="max-w-md mx-auto text-center bg-white p-8 rounded-lg shadow-lg">
-          <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-6" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Message Sent!</h2>
-          <p className="text-gray-600 mb-6">
+      <div className="min-h-screen pt-16 bg-gray-50 flex items-center justify-center px-2">
+        <div className="w-full max-w-md mx-auto text-center bg-white p-4 sm:p-8 rounded-lg shadow-lg">
+          <CheckCircle className="h-12 sm:h-16 w-12 sm:w-16 text-green-500 mx-auto mb-4 sm:mb-6" />
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-4">Message Sent!</h2>
+          <p className="text-gray-600 mb-4 sm:mb-6">
             Thank you for contacting us. We'll get back to you within 24 hours.
           </p>
-          <div className="text-sm text-gray-500">
+          <div className="text-xs sm:text-sm text-gray-500">
             Redirecting back to form in a few seconds...
           </div>
         </div>

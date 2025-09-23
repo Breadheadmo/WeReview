@@ -125,35 +125,20 @@ const Services = () => {
 
   return (
     <>
-      <div className="min-h-screen pt-16">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-dark-slate to-dark-gray text-white py-20">
+      <div className="min-h-screen pt-16 px-2 sm:px-4">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-                Our Inspection Services
-              </h1>
-              <p className="text-xl text-muted-gray">
-                Comprehensive vehicle inspection services tailored to your specific needs and budget requirements.
+            <div className="text-center mb-10 sm:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2 sm:mb-4">Our Services</h2>
+              <p className="text-base sm:text-xl text-secondary-gray max-w-3xl mx-auto">
+                Comprehensive inspection services tailored to your needs and budget
               </p>
             </div>
-          </div>
-        </section>
-        {/* Services Grid */}
-        <section className="py-20 bg-light-gray">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-text mb-4">Choose Your Service</h2>
-              <p className="text-xl text-secondary-gray max-w-3xl mx-auto">
-                Select from our range of professional inspection services designed to give you complete confidence in your vehicle purchase.
-              </p>
-            </div>
-            
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {services.map((service) => {
                 const Icon = service.icon;
                 return (
-                  <div key={service.id} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow border border-light-border">
+                  <div key={service.id} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow border border-light-border mb-6">
                     <div className="flex items-start space-x-4 mb-6">
                       <div className="bg-brand-green p-3 rounded-lg">
                         <Icon className="h-8 w-8 text-white" />
@@ -164,7 +149,6 @@ const Services = () => {
                         <p className="text-secondary-gray mb-6">{service.description}</p>
                       </div>
                     </div>
-                    
                     <div className="border-t border-light-border pt-6">
                       <h4 className="font-semibold text-primary-text mb-4">What's Included:</h4>
                       <ul className="space-y-2">

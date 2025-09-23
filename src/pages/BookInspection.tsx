@@ -205,7 +205,7 @@ const BookInspection = () => {
   }
 
   return (
-    <div className="min-h-screen pt-16 bg-light-gray">
+  <div className="min-h-screen pt-16 bg-light-gray px-2 sm:px-4">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-dark-slate to-dark-gray text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -220,17 +220,17 @@ const BookInspection = () => {
       </section>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <form onSubmit={handleSubmit} className="space-y-12">
+  <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-12">
           
           {/* Personal Information */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <div className="flex items-center space-x-3 mb-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-4 sm:mb-6">
               <User className="h-6 w-6 text-brand-blue" />
               <h2 className="text-2xl font-bold text-primary-text">Personal Information</h2>
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div>
+              <div className="col-span-1">
                 <label className="block text-sm font-medium text-primary-text mb-2">Name *</label>
                 <input
                   type="text"
@@ -360,7 +360,7 @@ const BookInspection = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="md:col-span-2">
+              <div className="col-span-1 md:col-span-2">
                 <label className="block text-sm font-medium text-primary-text mb-2">Dealership / Private Seller's Name *</label>
                 <input
                   type="text"
@@ -405,7 +405,7 @@ const BookInspection = () => {
                 {errors.contactNumber && <p className="mt-1 text-sm text-brand-red">{errors.contactNumber}</p>}
               </div>
               
-              <div className="md:col-span-2">
+              <div className="col-span-1 md:col-span-2">
                 <label className="block text-sm font-medium text-primary-text mb-2">Address Of Where Vehicle(s) Can Be Viewed *</label>
                 <input
                   type="text"
@@ -474,7 +474,7 @@ const BookInspection = () => {
               <h2 className="text-2xl font-bold text-primary-text">Select 3 Possible Dates For The Inspection</h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               <div>
                 <label className="block text-sm font-medium text-primary-text mb-2">Date Option 1 *</label>
                 <input
@@ -523,7 +523,7 @@ const BookInspection = () => {
               <h2 className="text-2xl font-bold text-primary-text">Vehicle Information</h2>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label className="block text-sm font-medium text-primary-text mb-2">Make Of Vehicle *</label>
                 <input
@@ -605,15 +605,14 @@ const BookInspection = () => {
 
           {/* Services Selection */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-primary-text mb-2">Choose The Services That You're Interested In:</h2>
-              <p className="text-secondary-gray">Select one or more inspection services that meet your needs.</p>
+            <div className="mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-primary-text mb-2">Choose The Services That You're Interested In:</h2>
+              <p className="text-sm sm:text-base text-secondary-gray">Select one or more inspection services that meet your needs.</p>
               {errors.services && <p className="mt-2 text-sm text-brand-red">{errors.services}</p>}
             </div>
-            
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {services.map((service) => (
-                <div key={service.id} className="flex items-start space-x-3 p-4 border border-light-border rounded-lg hover:bg-light-gray">
+                <div key={service.id} className="flex items-start space-x-3 p-3 sm:p-4 border border-light-border rounded-lg hover:bg-light-gray">
                   <input
                     type="checkbox"
                     id={service.id}
@@ -622,20 +621,19 @@ const BookInspection = () => {
                     className="mt-1 h-5 w-5 text-brand-blue rounded focus:ring-brand-blue"
                   />
                   <label htmlFor={service.id} className="flex-1 cursor-pointer">
-                    <div className="flex justify-between items-start">
-                      <span className="text-primary-text font-medium">{service.name}</span>
-                      <span className="text-brand-green font-bold text-lg">{service.price}</span>
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                      <span className="text-primary-text font-medium text-sm sm:text-base">{service.name}</span>
+                      <span className="text-brand-green font-bold text-base sm:text-lg">{service.price}</span>
                     </div>
                   </label>
                 </div>
               ))}
             </div>
-            
             {formData.selectedServices.length > 0 && (
-              <div className="mt-6 p-4 bg-light-gray rounded-lg border border-light-border">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-primary-text">Total Estimated Cost:</span>
-                  <span className="text-2xl font-bold text-brand-green">R{calculateTotal().toLocaleString()}.00</span>
+              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-light-gray rounded-lg border border-light-border">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+                  <span className="text-base sm:text-lg font-semibold text-primary-text">Total Estimated Cost:</span>
+                  <span className="text-xl sm:text-2xl font-bold text-brand-green">R{calculateTotal().toLocaleString()}.00</span>
                 </div>
               </div>
             )}
@@ -643,7 +641,7 @@ const BookInspection = () => {
 
           {/* Additional Information */}
           <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-bold text-primary-text mb-6">Additional Information</h2>
+            <h2 className="text-2xl font-bold text-primary-text mb-4 sm:mb-6">Additional Information</h2>
             
             <div>
               <label className="block text-sm font-medium text-primary-text mb-2">Message/Additional Information</label>
@@ -659,10 +657,10 @@ const BookInspection = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="text-center">
+          <div className="text-center mt-6">
             <button
               type="submit"
-              className="bg-brand-green text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors transform hover:scale-105 shadow-lg"
+              className="bg-brand-green text-white px-6 sm:px-12 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-green-600 transition-colors transform hover:scale-105 shadow-lg"
             >
               Submit Inspection Request
             </button>
