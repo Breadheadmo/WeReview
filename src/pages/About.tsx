@@ -6,11 +6,11 @@ const About = () => {
     <>
       <div className="min-h-screen pt-16">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-dark-slate to-dark-gray text-white py-12 sm:py-16 md:py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center text-center min-h-[200px] sm:min-h-[300px] md:min-h-[400px]">
+        <section className="bg-gradient-to-br from-dark-slate to-dark-gray text-white py-4 sm:py-6 md:py-8 lg:py-10">
+          <div className="max-w-4xl mx-auto px-2 sm:px-4 lg:px-8 flex flex-col items-center justify-center text-center min-h-[80px] sm:min-h-[120px] md:min-h-[160px] lg:min-h-[200px]">
             <div className="w-full max-w-3xl">
               <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4 sm:mb-6">
-                About CarInspect Pro
+                About WeReview
               </h1>
               <p className="text-base sm:text-xl text-muted-gray">
                 Your trusted partner in vehicle inspection services, providing peace of mind for every car purchase.

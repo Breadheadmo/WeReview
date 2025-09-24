@@ -1,8 +1,16 @@
+import { useEffect, useState } from 'react';
+import '../components/ui/Shimmer.css';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { Shield, CheckCircle, Users, Phone, Mail, MapPin, Clock, Award, Star } from 'lucide-react';
 
 const Home = () => {
+  // Simulate loading for shimmer effect
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <div className="min-h-screen">
@@ -35,29 +43,54 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Us Section */}
+      {/* About Us Section with Shimmer */}
       <section id="about" className="py-20 bg-light-gray">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10 sm:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary-text mb-2 sm:mb-4">About Us</h2>
-            <p className="text-base sm:text-xl text-secondary-gray max-w-3xl mx-auto">
-              We are independent car inspection specialists committed to protecting your investment and ensuring you make informed purchasing decisions.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div>
-              <h3 className="text-lg sm:text-2xl font-bold text-primary-text mb-4 sm:mb-6">Why We Exist</h3>
-              <p className="text-secondary-gray text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                Buying a car is one of the biggest purchases you'll make. We understand the risks and uncertainties involved, which is why we've dedicated ourselves to providing comprehensive, unbiased vehicle inspections.
-              </p>
-              <p className="text-secondary-gray text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
-                Our certified inspectors have years of experience identifying potential issues that could cost you thousands down the road. We give you the complete picture so you can negotiate with confidence or walk away if necessary.
-              </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 text-brand-green">
-                <Shield className="h-6 w-6 text-brand-green" />
-                <span className="font-semibold">Your protection is our priority</span>
+            {loading ? (
+              <div className="max-w-3xl mx-auto">
+                <div className="h-6 w-full mb-2"><div className="shimmer-wrapper"><div className="shimmer"></div></div></div>
+                <div className="h-4 w-2/3 mx-auto"><div className="shimmer-wrapper"><div className="shimmer"></div></div></div>
               </div>
+            ) : (
+              <p className="text-base sm:text-xl text-secondary-gray max-w-3xl mx-auto">
+                We are independent car inspection specialists committed to protecting your investment and ensuring you make informed purchasing decisions.
+              </p>
+            )}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <style>{`
+              @keyframes fadeIn {
+                to { opacity: 1; }
+              }
+              .animate-fadeIn {
+                opacity: 0;
+                animation: fadeIn 1.2s forwards;
+              }
+            `}</style>
+            <div className="animate-fadeIn">
+              <h3 className="text-lg sm:text-2xl font-bold text-primary-text mb-4 sm:mb-6">Why We Exist</h3>
+              {loading ? (
+                <>
+                  <div className="h-4 w-full mb-2"><div className="shimmer-wrapper"><div className="shimmer"></div></div></div>
+                  <div className="h-4 w-5/6 mb-2"><div className="shimmer-wrapper"><div className="shimmer"></div></div></div>
+                  <div className="h-4 w-2/3 mb-2"><div className="shimmer-wrapper"><div className="shimmer"></div></div></div>
+                </>
+              ) : (
+                <>
+                  <p className="text-secondary-gray text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                    Buying a car is one of the biggest purchases you'll make. We understand the risks and uncertainties involved, which is why we've dedicated ourselves to providing comprehensive, unbiased vehicle inspections.
+                  </p>
+                  <p className="text-secondary-gray text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                    Our certified inspectors have years of experience identifying potential issues that could cost you thousands down the road. We give you the complete picture so you can negotiate with confidence or walk away if necessary.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-2 text-brand-green">
+                    <Shield className="h-6 w-6 text-brand-green transition-transform duration-300 hover:scale-110" />
+                    <span className="font-semibold transition-colors duration-300 hover:text-green-700">Your protection is our priority</span>
+                  </div>
+                </>
+              )}
             </div>
             <div className="bg-white p-4 sm:p-8 rounded-lg shadow-lg mt-6 md:mt-0">
               <h4 className="text-lg sm:text-xl font-bold text-primary-text mb-4 sm:mb-6">Our Promise</h4>
